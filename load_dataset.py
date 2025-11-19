@@ -110,10 +110,11 @@ fasta_file = sys.argv[1]
 species_name = sys.argv[2]
 dataset_id = sys.argv[3]
 
-
+# Add specie to species table and get the newly generated species_id
 create_specie(species_name, dataset_id)
 species_id = get_specie_index()
 
+# Iterate over fasta file and write each record into proteins table
 for fasta_record in SeqIO.parse(fasta_file, "fasta"):
     fasta_info = get_fasta_info(fasta_record)
     create_protein_record(species_id, fasta_info)
