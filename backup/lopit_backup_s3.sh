@@ -61,7 +61,3 @@ rm "$BACKUP_DIR/$BACKUP_FILE_GZ"
 echo -e "${GREEN}Backup process completed!${NC}"
 echo "Backup file: $BACKUP_FILE_GZ"
 echo "S3 location: $S3_BUCKET/$S3_PATH/$BACKUP_FILE_GZ"
-
-# Optional: Keep only last N backups in S3 (uncomment to use)
-# KEEP_BACKUPS=3
-# s3cmd ls "$S3_BUCKET/$S3_PATH/" | sort -r | tail -n +$((KEEP_BACKUPS + 1)) | awk '{print $4}' | xargs -I {} s3cmd del {}
