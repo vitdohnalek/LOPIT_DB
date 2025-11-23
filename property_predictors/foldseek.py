@@ -1,3 +1,9 @@
+#Annotate proteins using fast structural alignment (foldseek)
+#Input is a directory containing .cif files (can be .pdb as well)
+#.cif files can be generated using chai_batch script
+#This script uses foldseek API, computing the alignments on remote server
+#Output is a .tsv file containing best hit against three databases and hit that appeared most freqeuntly among results
+
 import glob
 import requests
 import time
